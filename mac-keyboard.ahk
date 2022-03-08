@@ -17,7 +17,7 @@ ParseDeadKeys(deadKeys) ; accepts a dictionary as input, e.g., deadKeys := {a: "
 ; See https://github.com/TaranVH/2nd-keyboard/blob/master/Taran's_Windows_Mods/Alt_menu_acceleration_DISABLER.ahk
 ~LAlt::
 Sendinput {Blind}{sc0E9}
-KeyWait, LAlt ; this wasit for the key to be RELEASED. So that it doesn't keep spamming SC0E9 (as seen from an AHK window Key history and script info... window.)
+KeyWait, LAlt ; this waits for the key to be RELEASED. So that it doesn't keep spamming SC0E9 (as seen from an AHK window Key history and script info... window.)
 Sendinput {Blind}{sc0EA}
 return
 
