@@ -53,33 +53,25 @@ return
 
 ; Acute accent
 !e::
-deadkeys := {a: "á", e: "é", i: "í", o: "ó", u: "ú", y: "ý"}
-Input, key, L1, {delete}{esc}{home}{end} ; ... etc
-
-if GetKeyState("Shift")
-    Send % Format("{:U}", deadkeys[key])
-else
-    Send % deadkeys[key]
-	
+ParseDeadKeys({a: "á", e: "é", i: "í", o: "ó", u: "ú", y: "ý"})
 return
 
 ; Grave accent
 !`::
-deadkeys := {a: "à", e: "è", i: "ì", o: "ò", u: "ù"}
-Input, key, L1, {delete}{esc}{home}{end} ; ... etc
-Send % deadkeys[key]
+ParseDeadKeys({a: "à", e: "è", i: "ì", o: "ò", u: "ù"})
 return
 
 ; Circumflex accent
 !o::
-deadkeys := {a: "â", e: "ê", i: "î", o: "ô", u: "û"}
-Input, key, L1, {delete}{esc}{home}{end} ; ... etc
-Send % deadkeys[key]
+ParseDeadKeys({a: "â", e: "ê", i: "î", o: "ô", u: "û"})
 return
 
 ; Trema/umlaut/diaeresis
 !i::
-deadkeys := {a: "ä", e: "ë", i: "ï", o: "ö", u: "ü", y: "ÿ"}
-Input, key, L1, {delete}{esc}{home}{end} ; ... etc
-Send % deadkeys[key]
+ParseDeadKeys({a: "ä", e: "ë", i: "ï", o: "ö", u: "ü", y: "ÿ"})
+return
+
+; ñ/Ñ
+!n::
+ParseDeadKeys({n: "ñ"})
 return
