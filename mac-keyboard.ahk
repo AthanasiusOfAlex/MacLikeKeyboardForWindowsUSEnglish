@@ -5,7 +5,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ParseDeadKeys(deadKeys) ; accepts a dictionary as input, e.g., deadKeys := {a: "á", e: "é", i: "í", o: "ó", u: "ú", y: "ý"}
 {
-	Input, key, L1, {delete}{esc}{home}{end} ; ... etc
+	Input, key, L1, {delete}{esc}{home}{end} ; add more keys to this list if you want them to cancel the dead key
 
 	if GetKeyState("Shift")
 		Send % Format("{:U}", deadKeys[key])
@@ -49,6 +49,30 @@ return
 Send, €
 return
 
+!;::
+Send, … 
+return
+
+!\::
+Send, «
+return
+
+!+\::
+Send, »
+return
+
+!+8::
+Send, °
+return
+
+!+?::
+Send, ¿
+return
+
+!1::
+Send, ¡
+return
+
 ; Dead keys (accents)
 
 ; Acute accent
@@ -71,7 +95,12 @@ return
 ParseDeadKeys({a: "ä", e: "ë", i: "ï", o: "ö", u: "ü", y: "ÿ"})
 return
 
-; ñ/Ñ
+; N with tilde
 !n::
 ParseDeadKeys({n: "ñ"})
+return
+
+; C with cedilla	
+!c::
+ParseDeadKeys({c: "ç"})
 return
