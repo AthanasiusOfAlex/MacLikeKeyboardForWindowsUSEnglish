@@ -98,20 +98,6 @@ ParseDeadKeys(keyMap, diacriticMark)
 
 ; Regular ALT keys.
 
-; !c::SendInput "ç"
-; +!c::SendInput "Ç"
-; ![::SendInput "“"
-; !+[::SendInput "”"
-; !]::SendInput "‘"
-; !+]::SendInput "’"
-; !+2::SendInput "€"
-; !;::SendInput "…"
-; !\::SendInput "«"
-; !+\::SendInput "»"
-; !+8::SendInput "°"
-; !+?::SendInput "¿"
-; !1::SendInput "¡"
-
 !o::SendInput "ø"
 +!j::SendInput "Ô"
 +!l::SendInput "Ò"
