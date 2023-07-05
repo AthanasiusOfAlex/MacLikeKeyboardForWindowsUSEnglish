@@ -1,13 +1,9 @@
 ﻿#Requires AutoHotkey v2.0
 #SingleInstance Force
 
-; SendMode "Input"  ; Recommended for new scripts due to its superior speed and reliability.
-; SetWorkingDir A_ScriptDir  ; Ensures a consistent starting directory.
-
 ParseDeadKeys(deadKeys) ; accepts an associative array as input.
 {
-
-	hook := InputHook("L1", "{delete}{esc}{home}{end}") ; add more keys to this list if you want them to cancel the dead key
+	hook := InputHook("L1", "{delete}{backspace}{esc}{home}{end}") ; add more keys to this list if you want them to cancel the dead key
     hook.Start()
 	theEndKey := hook.Wait()
 
@@ -15,29 +11,29 @@ ParseDeadKeys(deadKeys) ; accepts an associative array as input.
 
 	try {
 		value := deadKeys[key]
-		; MsgBox Format("I received {1}. I will print {2}.", key, value)
-		SendInput value
+		MsgBox Format("I received {1}. I will print {2}.", key, value)
+		; SendInput value
 	} catch Error as err {
 		if (theEndKey == "EndKey") {
-			; MsgBox "I received and end key. I will print nothing."
+			MsgBox "I received an end key. I will print nothing."
 		}
 		else {
-			; MsgBox Format("I received {1}. I will print the acute accent by itself: ´.", key)
-			SendInput "´"
+			MsgBox Format("I received {1}. I will print the acute accent by itself: ´.", key)
+			; SendInput "´"
 		}
 	}
-
-	; if (GetKeyState("Shift"))
-	; 	output := Format("{:U}", deadKeys[key]) 
-	; else
-	; 	output := deadKeys[key]
-
 }
 
 ; Acute accent
 !e::
 {
-	ParseDeadKeys(Map("a", "á", "e", "é", "i", "í", "o", "ó", "u", "ú", "y", "ý"))
+	ParseDeadKeys(Map("a", "á", "e", "é", "i", "í", "o", "ó", "u", "ú", "y", "ý", "A", "Á", "E", "É", "I", "Í", "O", "Ó", "U", "Ú", "Y", "Ý"))
+}
+
++!e::
+{
+	MsgBox
+	SendInput "´"
 }
 
 ; #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
