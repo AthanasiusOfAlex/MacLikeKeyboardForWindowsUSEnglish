@@ -65,25 +65,25 @@ ParseDeadKeys(keyMap, diacriticMark)
 
 ; Circumflex accent
 
-!o::
+!i::
 {
 	keyMap := Map("a", "â", "e", "ê", "i", "î", "o", "ô", "u", "û", "A", "Â", "E", "Ê", "I", "Î", "O", "Ô", "U", "Û")
 	diacriticMark := "^"
 	ParseDeadKeys(keyMap, diacriticMark)
 }
 
-+!o::SendInput "{Raw}^"
++!i::SendInput "{Raw}^"
 
 ; Trema/umlaut/diaeresis
 
-!i::
+!u::
 {
 	keyMap := Map("a", "ä", "e", "ë", "i", "ï", "o", "ö", "u", "ü", "y", "ÿ", "A", "Ä", "E", "Ë", "I", "Ï", "O", "Ö", "U", "Ü", "Y", "Ÿ")
 	diacriticMark := "¨"
 	ParseDeadKeys(keyMap, diacriticMark)
 }
 
-+!i::SendInput "{Raw}¨"
++!u::SendInput "{Raw}¨"
 
 ; tilde
 
@@ -98,16 +98,91 @@ ParseDeadKeys(keyMap, diacriticMark)
 
 ; Regular ALT keys.
 
-!c::SendInput "ç"
+; !c::SendInput "ç"
+; +!c::SendInput "Ç"
+; ![::SendInput "“"
+; !+[::SendInput "”"
+; !]::SendInput "‘"
+; !+]::SendInput "’"
+; !+2::SendInput "€"
+; !;::SendInput "…"
+; !\::SendInput "«"
+; !+\::SendInput "»"
+; !+8::SendInput "°"
+; !+?::SendInput "¿"
+; !1::SendInput "¡"
+
+!o::SendInput "ø"
++!j::SendInput "Ô"
++!l::SendInput "Ò"
++!h::SendInput "Ó"
+!0::SendInput "º"
++!b::SendInput "ı"
++!f::SendInput "Ï"
++!d::SendInput "Î"
++!s::SendInput "Í"
+!f::SendInput "ƒ"
++!6::SendInput "ﬂ"
++!5::SendInput "ﬁ"
 +!c::SendInput "Ç"
+!c::SendInput "ç"
++!'::SendInput "Æ"
+!'::SendInput "æ"
++!a::SendInput "Å"
+!a::SendInput "å"
++!m::SendInput "Â"
++!y::SendInput "Á"
+!9::SendInput "ª"
++!2::SendInput "€"
+!y::SendInput "¥"
+!3::SendInput "£"
+!4::SendInput "¢"
++!v::SendInput "◊"
+!.::SendInput "≥"
+!,::SendInput "≤"
+!x::SendInput "≈"
+!b::SendInput "∫"
+!5::SendInput "∞"
+!v::SendInput "√"
++!1::SendInput "⁄"
+!l::SendInput "¬"
+!=::SendInput "≠"
+!/::SendInput "÷"
++!=::SendInput "±"
+!w::SendInput "∑"
++!p::SendInput "∏"
+!j::SendInput "∆"
+!d::SendInput "∂"
+!r::SendInput "®"
+!g::SendInput "©"
++!8::SendInput "°"
++!t::SendInput "ˇ"
++!x::SendInput "˛"
++!z::SendInput "¸"
++!g::SendInput "˝"
+!k::SendInput "˚"
+!h::SendInput "˙"
++!.::SendInput "˘"
++!,::SendInput "¯"
+!8::SendInput "•"
++!7::SendInput "‡"
+!t::SendInput "†"
++!r::SendInput "‰"
+!7::SendInput "¶"
+!6::SendInput "§"
++!\::SendInput "»"
++\::SendInput "«"
++!w::SendInput "„"
++![::SendInput "”"
 ![::SendInput "“"
-!+[::SendInput "”"
++!4::SendInput "›"
++!3::SendInput "‹"
++!0::SendInput "‚"
++!]::SendInput "’"
 !]::SendInput "‘"
-!+]::SendInput "’"
-!+2::SendInput "€"
-!;::SendInput "…"
-!\::SendInput "«"
-!+\::SendInput "»"
-!+8::SendInput "°"
-!+?::SendInput "¿"
++!9::SendInput "·"
++!;::SendInput "…"
++!/::SendInput "¿"
 !1::SendInput "¡"
++!-::SendInput "—"
+!-::SendInput "–"
