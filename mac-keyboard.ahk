@@ -18,8 +18,8 @@ ParseDeadKeys(deadKeys) ; accepts an associative array as input.
 			MsgBox "I received an end key. I will print nothing."
 		}
 		else {
-			MsgBox Format("I received {1}. I will print the acute accent by itself: ´.", key)
-			; SendInput "´"
+			MsgBox Format("I received {1}. I will print the acute accent and {1} after it: ´{1}.", key)
+			; SendInput Format("´{1}", key)
 		}
 	}
 }
@@ -32,8 +32,8 @@ ParseDeadKeys(deadKeys) ; accepts an associative array as input.
 
 +!e::
 {
-	MsgBox
-	SendInput "´"
+	MsgBox "I will print the acute accent by itself: ´"
+	; SendInput "´"
 }
 
 ; #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
