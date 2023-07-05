@@ -6,7 +6,8 @@ InstallKeybdHook
 ParseDeadKeys(keyMap, diacriticMark)
 ; accepts an associative array and a diacritic mark as input.
 {
-	hook := InputHook("L1", "{delete}{backspace}{esc}{home}{end}") ; add more keys to this list if you want them to cancel the dead key
+	keysThatCancelDeadKey := "{delete}{backspace}{esc}{home}{end}"
+	hook := InputHook("L1", keysThatCancelDeadKey)
     hook.Start()
 	theEndKey := hook.Wait()
 
