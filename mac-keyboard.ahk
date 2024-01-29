@@ -189,6 +189,7 @@ ParseDeadKeys(keyMap, diacriticMark)
 +!]::SendInput "’"
 !]::SendInput "‘"
 +!9::SendInput "·"
+!;::SendInput "…"
 +!;::SendInput "…"
 +!/::SendInput "¿"
 !1::SendInput "¡"
